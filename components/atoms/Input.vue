@@ -17,9 +17,12 @@ export default {
 <style lang="scss">
 .Input {
   width: 100%;
-  max-width: $pokemon-base * 60;
+  max-width: $pokemon-base * 70;
   height: $pokemon-base * 10;
   padding: 0 $pokemon-base;
   font-size: 14px;
+
+  display: block;
+  border: 1px solid #ccc;
 }
 </style>
