@@ -28,7 +28,7 @@
       <div class="Pokemons_row">
         <h3>卵技</h3>
         <ul class="Pokemons_list">
-          <li v-for="(egg_skill, eIndex) in pokemon.egg_skills" :key="eIndex">
+          <li v-for="(egg_skill, eIndex) in pokemon.egg_skills.sort()" :key="eIndex">
             {{ egg_skill }}
           </li>
         </ul>
