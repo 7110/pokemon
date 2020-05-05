@@ -1,5 +1,12 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/pokemon/'
+  }
+} : {}
 
 export default {
+  ...routerBase,
+
   mode: 'universal',
   /*
   ** Headers of the page
@@ -8,7 +15,7 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -42,8 +49,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
+  /*
+  ** global SCSS
+  */
+  styleResources: {
+    scss: [
+      '~/assets/scss/global.scss'
+    ]
+  },
   /*
   ** Build configuration
   */
